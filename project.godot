@@ -24,3 +24,7 @@ window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1
 window/vsync/vsync_mode=0
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
