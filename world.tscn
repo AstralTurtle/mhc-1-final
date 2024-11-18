@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwkncs3fqhpgy"]
+[gd_scene load_steps=3 format=3 uid="uid://dwkncs3fqhpgy"]
 
-[ext_resource type="PackedScene" uid="uid://b6ksmedhurv24" path="res://body.tscn" id="1_n0bkl"]
+[ext_resource type="PackedScene" uid="uid://bwqxue42mfl4u" path="res://Player/player_horde.tscn" id="1_angm3"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u0kte"]
+b = Vector2(-128, 0)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_n0bkl")]
-position = Vector2(377, 149)
+[node name="World" type="Node2D"]
+
+[node name="PlayerHorde" parent="." instance=ExtResource("1_angm3")]
+position = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.24, 0.24)
+position = Vector2(-6, -605)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(533, 107)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_u0kte")
