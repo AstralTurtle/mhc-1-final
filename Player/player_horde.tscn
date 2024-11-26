@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwqxue42mfl4u"]
+[gd_scene load_steps=4 format=3 uid="uid://bwqxue42mfl4u"]
 
 [ext_resource type="Script" path="res://Player/player_horde.gd" id="1_drcei"]
 [ext_resource type="Texture2D" uid="uid://dq64r162jui7p" path="res://icon.svg" id="1_hblm2"]
+[ext_resource type="PackedScene" uid="uid://bq4rrn8htaped" path="res://Player/player_horde_member.tscn" id="3_u0fh8"]
 
 [node name="PlayerHorde" type="Node2D"]
-script = ExtResource("1_drcei")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerHordeController" type="Node2D" parent="."]
+script = ExtResource("1_drcei")
+speed = null
+horde_member = ExtResource("3_u0fh8")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerHordeController"]
+modulate = Color(1, 0, 1, 1)
 texture = ExtResource("1_hblm2")

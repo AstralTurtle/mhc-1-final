@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwkncs3fqhpgy"]
+[gd_scene load_steps=8 format=3 uid="uid://dwkncs3fqhpgy"]
 
 [ext_resource type="PackedScene" uid="uid://bwqxue42mfl4u" path="res://Player/player_horde.tscn" id="1_angm3"]
 [ext_resource type="Script" path="res://Player/CurrentLevel.gd" id="2_jvmmh"]
 [ext_resource type="PackedScene" uid="uid://ch7y0e6v1p5tc" path="res://Player/buff_barrel.tscn" id="3_qk0x5"]
 [ext_resource type="PackedScene" uid="uid://brrv2sfgf63mj" path="res://Player/player_projectile.tscn" id="4_nj02d"]
-[ext_resource type="PackedScene" uid="uid://ci05fo0kehfc3" path="res://Player/buff_manager.tscn" id="5_o40i8"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_u0kte"]
 b = Vector2(-147, 0)
@@ -50,9 +49,8 @@ label_settings = SubResource("LabelSettings_v0vt0")
 horizontal_alignment = 1
 script = ExtResource("2_jvmmh")
 
+[node name="BuffBarrel" parent="." instance=ExtResource("3_qk0x5")]
+position = Vector2(157, -1453)
+
 [node name="Area2D" parent="." instance=ExtResource("4_nj02d")]
 position = Vector2(202, -14)
-
-[node name="BuffManager" parent="." instance=ExtResource("5_o40i8")]
-position = Vector2(141, -1522)
-barrel = ExtResource("3_qk0x5")
