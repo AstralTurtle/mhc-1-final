@@ -17,6 +17,11 @@ const player_hoard_group: String = "_PlayerHoardGroup"
 @export var horde_member: PackedScene
 
 
+@onready var bullet = preload("res://Player/bullet.tscn")
+
+var time_accumulated = 0 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	global_position.x = move_toward(global_position.x, target_location, speed)
 	global_position.x = clampf(global_position.x, -600, 600) # slightly larger then the border, but prevents the horde from taking to long to respond
@@ -50,5 +55,14 @@ func merge():
 		hoard_count = 0
 		get_tree().call_group(player_hoard_group, 'queue_free')
 		spawn()
+func _process(delta):
+	time_accumulated += delta
+	#adjust when player gets buffs
+	var rate = 0.1
+	if(time_accumulated >= rate):
+		var bullets = bullet.instantiate()
+		bullets.position = position
+		bullets.position.y -= 125
+		get_parent().add_child(bullets)
+		time_accumulated = 0
 	
-		
