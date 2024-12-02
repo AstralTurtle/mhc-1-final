@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs6omi6r07eg8"]
+
+[ext_resource type="Texture2D" uid="uid://dq64r162jui7p" path="res://icon.svg" id="2_78yhv"]
+
+[sub_resource type="GDScript" id="GDScript_dm2jw"]
+script/source = "extends Area2D
+
+@export var velocity = Vector2()
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	set_process(true)
+	pass
+
+func _process(delta: float) -> void:
+	translate(velocity * 1)
+	
+	if position.y-35 >= get_viewport_rect().size.y:
+			queue_free()
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stn3x"]
+size = Vector2(139, 137.5)
+
+[node name="enemy" type="Area2D"]
+script = SubResource("GDScript_dm2jw")
+velocity = Vector2(0, 50)
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_78yhv")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.25)
+shape = SubResource("RectangleShape2D_stn3x")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwkncs3fqhpgy"]
+
+[ext_resource type="PackedScene" uid="uid://bwqxue42mfl4u" path="res://Player/player_horde.tscn" id="1_angm3"]
+
+[node name="World" type="Node2D"]
+
+[node name="PlayerHorde" parent="." instance=ExtResource("1_angm3")]
+position = Vector2(1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]

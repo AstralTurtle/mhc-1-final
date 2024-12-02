@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwkncs3fqhpgy"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_0vr4m"]
+[ext_resource type="PackedScene" uid="uid://sqcimyr1jfkb" path="res://enemy/enemy_spawner.tscn" id="1_8wuyu"]
+[ext_resource type="PackedScene" uid="uid://bwqxue42mfl4u" path="res://Player/player_horde.tscn" id="1_angm3"]
+[ext_resource type="Script" path="res://Player/CurrentLevel.gd" id="2_jvmmh"]
+[ext_resource type="PackedScene" uid="uid://ch7y0e6v1p5tc" path="res://Player/buff_barrel.tscn" id="3_qk0x5"]
+[ext_resource type="PackedScene" uid="uid://ci05fo0kehfc3" path="res://Player/buff_manager.tscn" id="5_o40i8"]
+[ext_resource type="PackedScene" uid="uid://b5lcjur3tk0fd" path="res://enemy/enemy.tscn" id="7_22v11"]
+[ext_resource type="PackedScene" uid="uid://xi3wld85to6h" path="res://enemy/enemy_2.tscn" id="8_53qm8"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u0kte"]
+b = Vector2(-147, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ee5v5"]
+b = Vector2(146, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v0vt0"]
+font_size = 64
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_0vr4m")
+enemies = Array[PackedScene]([ExtResource("7_22v11"), ExtResource("8_53qm8")])
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="EnemySpawner" parent="." instance=ExtResource("1_8wuyu")]
+
+[node name="PlayerHorde" parent="." instance=ExtResource("1_angm3")]
+position = Vector2(1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-6, -605)
+
+[node name="RightBorder" type="StaticBody2D" parent="."]
+position = Vector2(550, 107)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder"]
+shape = SubResource("SegmentShape2D_u0kte")
+
+[node name="LeftBorder" type="StaticBody2D" parent="."]
+position = Vector2(-550, 107)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder"]
+position = Vector2(384, -32)
+shape = SubResource("SegmentShape2D_ee5v5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CurrentLevel" type="Label" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 1844.0
+offset_right = 447.0
+offset_bottom = 1932.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "current level 1"
+label_settings = SubResource("LabelSettings_v0vt0")
+horizontal_alignment = 1
+script = ExtResource("2_jvmmh")
+
+[node name="BuffManager" parent="." instance=ExtResource("5_o40i8")]
+position = Vector2(141, -1522)
+barrel = ExtResource("3_qk0x5")
+
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
