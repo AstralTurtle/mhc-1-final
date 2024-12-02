@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch7y0e6v1p5tc"]
+
+[ext_resource type="Script" path="res://Player/buff_barrel.gd" id="1_htytn"]
+[ext_resource type="Texture2D" uid="uid://csluqvkfyevgl" path="res://assets/buffs/metrocard.png" id="2_43114"]
+[ext_resource type="Texture2D" uid="uid://c5a0xihdcw6oo" path="res://assets/buffs/barrel.png" id="2_gpimy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ndqci"]
+radius = 28.9894
+height = 128.013
+
+[node name="BuffBarrel" type="Area2D"]
+script = ExtResource("1_htytn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.56731
+shape = SubResource("CapsuleShape2D_ndqci")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gpimy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -63.0
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 24.0
+text = "100"
+horizontal_alignment = 1
+
+[node name="BuffTexture" type="Sprite2D" parent="."]
+position = Vector2(1, -11)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_43114")
