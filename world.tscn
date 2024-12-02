@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dwkncs3fqhpgy"]
+[gd_scene load_steps=18 format=4 uid="uid://dwkncs3fqhpgy"]
 
 [ext_resource type="PackedScene" uid="uid://bwqxue42mfl4u" path="res://Player/player_horde.tscn" id="1_angm3"]
 [ext_resource type="Script" path="res://world.gd" id="1_eq16t"]
@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" path="res://enemy/enemy_2.tscn" id="3_8406j"]
 [ext_resource type="PackedScene" uid="uid://brrv2sfgf63mj" path="res://Player/player_projectile.tscn" id="4_nj02d"]
 [ext_resource type="PackedScene" uid="uid://ci05fo0kehfc3" path="res://Player/buff_manager.tscn" id="5_o40i8"]
+[ext_resource type="Texture2D" uid="uid://csluqvkfyevgl" path="res://assets/buffs/metrocard.png" id="8_87ej5"]
+[ext_resource type="Texture2D" uid="uid://cuk2e57yoqfo2" path="res://assets/buffs/phone.png" id="9_4fe2n"]
 [ext_resource type="PackedScene" uid="uid://sqcimyr1jfkb" path="res://enemy/enemy_spawner.tscn" id="9_qrtql"]
+[ext_resource type="Texture2D" uid="uid://bgobw2yf3s3hq" path="res://assets/buffs/ketchup.png" id="10_u8dtc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glfbb"]
 texture = ExtResource("2_0rq63")
@@ -659,6 +662,7 @@ position = Vector2(202, -14)
 
 [node name="BuffManager" parent="." instance=ExtResource("5_o40i8")]
 position = Vector2(141, -1522)
+textures = Array[Texture2D]([ExtResource("8_87ej5"), ExtResource("9_4fe2n"), ExtResource("10_u8dtc")])
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
