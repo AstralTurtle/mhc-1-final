@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq4rrn8htaped"]
+[gd_scene load_steps=11 format=3 uid="uid://bq4rrn8htaped"]
 
 [ext_resource type="Script" path="res://Player/player_horde_member.gd" id="1_euigm"]
-[ext_resource type="Texture2D" uid="uid://dq64r162jui7p" path="res://icon.svg" id="2_umglu"]
+[ext_resource type="Texture2D" uid="uid://kb8oyns0kpma" path="res://assets/mascots/brooklyn.png" id="2_vt3ae"]
+[ext_resource type="Texture2D" uid="uid://bv31j6fpl2ol5" path="res://assets/mascots/JJ.png" id="3_f2kqq"]
+[ext_resource type="Texture2D" uid="uid://d1vtf6kfy2nkm" path="res://assets/mascots/ccny.png" id="3_i3tnj"]
+[ext_resource type="Texture2D" uid="uid://ywi4e3ja4yv7" path="res://assets/mascots/hunter.png" id="4_6vrq4"]
+[ext_resource type="Texture2D" uid="uid://cob47aoq7xrns" path="res://assets/mascots/lehman.png" id="6_djop2"]
+[ext_resource type="Texture2D" uid="uid://bevkvdrryy1w4" path="res://assets/mascots/baruch.png" id="7_j6mdh"]
+[ext_resource type="Texture2D" uid="uid://dbj27suhxs1wr" path="res://assets/mascots/csi.png" id="8_x84xx"]
+[ext_resource type="Texture2D" uid="uid://dwraefr0rbskj" path="res://assets/mascots/queens.png" id="9_6nb4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b7qy"]
 size = Vector2(54, 52)
@@ -10,6 +17,7 @@ size = Vector2(54, 52)
 scale = Vector2(1.5, 1.5)
 motion_mode = 1
 script = ExtResource("1_euigm")
+sprites = Array[Texture2D]([ExtResource("2_vt3ae"), ExtResource("3_i3tnj"), ExtResource("4_6vrq4"), ExtResource("3_f2kqq"), ExtResource("6_djop2"), ExtResource("7_j6mdh"), ExtResource("8_x84xx"), ExtResource("9_6nb4h")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -1)
@@ -18,4 +26,4 @@ shape = SubResource("RectangleShape2D_8b7qy")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, -1)
 scale = Vector2(0.445313, 0.4375)
-texture = ExtResource("2_umglu")
+texture = ExtResource("3_f2kqq")

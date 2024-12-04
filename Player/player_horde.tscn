@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwqxue42mfl4u"]
+[gd_scene load_steps=5 format=3 uid="uid://bwqxue42mfl4u"]
 
 [ext_resource type="Script" path="res://Player/player_horde.gd" id="1_drcei"]
-[ext_resource type="Texture2D" uid="uid://dq64r162jui7p" path="res://icon.svg" id="1_hblm2"]
 [ext_resource type="PackedScene" uid="uid://brrv2sfgf63mj" path="res://Player/player_projectile.tscn" id="3_81tjk"]
 [ext_resource type="PackedScene" uid="uid://bq4rrn8htaped" path="res://Player/player_horde_member.tscn" id="3_u0fh8"]
 [ext_resource type="PackedScene" uid="uid://cg57xlixeu37d" path="res://Player/train.tscn" id="4_dsglf"]
@@ -9,14 +8,9 @@
 [node name="PlayerHorde" type="Node2D"]
 
 [node name="PlayerHordeController" type="Node2D" parent="."]
-visible = false
 script = ExtResource("1_drcei")
 speed = 500.0
 horde_member = ExtResource("3_u0fh8")
 member_speed = 250.0
 projectile = ExtResource("3_81tjk")
 train = ExtResource("4_dsglf")
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayerHordeController"]
-modulate = Color(1, 0, 1, 1)
-texture = ExtResource("1_hblm2")

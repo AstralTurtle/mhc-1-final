@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cob47aoq7xrns"
-path="res://.godot/imported/lehman.png-883d37983131f33c7d17c125eceaccaa.ctex"
+uid="uid://d1vtf6kfy2nkm"
+path="res://.godot/imported/ccny.png-f7d9d6decea50c3d9cddd50cad86c79b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lehman.png"
-dest_files=["res://.godot/imported/lehman.png-883d37983131f33c7d17c125eceaccaa.ctex"]
+source_file="res://assets/mascots/ccny.png"
+dest_files=["res://.godot/imported/ccny.png-f7d9d6decea50c3d9cddd50cad86c79b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ywi4e3ja4yv7"
-path="res://.godot/imported/hunter.png-15d326f50a9baa11fd3ce8fcd58f7b14.ctex"
+uid="uid://kb8oyns0kpma"
+path="res://.godot/imported/brooklyn.png-b3cf30c3450921d5004225e654fde48b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hunter.png"
-dest_files=["res://.godot/imported/hunter.png-15d326f50a9baa11fd3ce8fcd58f7b14.ctex"]
+source_file="res://assets/mascots/brooklyn.png"
+dest_files=["res://.godot/imported/brooklyn.png-b3cf30c3450921d5004225e654fde48b.ctex"]
 
 [params]
 

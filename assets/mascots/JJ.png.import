@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvxbsbm3kcgh1"
-path="res://.godot/imported/brooklyn.png-d5181a0b605f6f202ca491ff5a69d812.ctex"
+uid="uid://bv31j6fpl2ol5"
+path="res://.godot/imported/JJ.png-e71dd9b14de683817b439b7f4894cc61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/brooklyn.png"
-dest_files=["res://.godot/imported/brooklyn.png-d5181a0b605f6f202ca491ff5a69d812.ctex"]
+source_file="res://assets/mascots/JJ.png"
+dest_files=["res://.godot/imported/JJ.png-e71dd9b14de683817b439b7f4894cc61.ctex"]
 
 [params]
 
