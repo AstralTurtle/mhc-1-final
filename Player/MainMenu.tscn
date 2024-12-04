@@ -1,26 +1,13 @@
-[gd_scene load_steps=19 format=4 uid="uid://dwkncs3fqhpgy"]
+[gd_scene load_steps=12 format=4 uid="uid://c0pic70t058s1"]
 
-[ext_resource type="PackedScene" uid="uid://bwqxue42mfl4u" path="res://Player/player_horde.tscn" id="1_angm3"]
-[ext_resource type="Script" path="res://world.gd" id="1_eq16t"]
-[ext_resource type="Texture2D" uid="uid://bpuge3pjtj5cj" path="res://assets/CP_V1.0.4.png" id="2_0rq63"]
+[ext_resource type="FontFile" uid="uid://bdgqsmmdqak4y" path="res://assets/Daydream.ttf" id="1_1ttql"]
+[ext_resource type="Texture2D" uid="uid://bpuge3pjtj5cj" path="res://assets/CP_V1.0.4.png" id="1_4116f"]
+[ext_resource type="Script" path="res://Player/PlayGame.gd" id="2_5rree"]
+[ext_resource type="PackedScene" uid="uid://dwkncs3fqhpgy" path="res://world.tscn" id="3_dfuys"]
+[ext_resource type="Script" path="res://Player/scoreLabel.gd" id="5_02hfy"]
 
-[ext_resource type="PackedScene" uid="uid://b5lcjur3tk0fd" path="res://enemy/enemy.tscn" id="2_a52x8"]
-[ext_resource type="Script" path="res://Player/CurrentLevel.gd" id="2_jvmmh"]
-[ext_resource type="PackedScene" uid="uid://xi3wld85to6h" path="res://enemy/enemy_2.tscn" id="3_8406j"]
-[ext_resource type="PackedScene" uid="uid://davb1ws1qaocf" path="res://enemy/enemy_3.tscn" id="4_de130"]
-[ext_resource type="PackedScene" uid="uid://brrv2sfgf63mj" path="res://Player/player_projectile.tscn" id="4_nj02d"]
-
-[ext_resource type="PackedScene" uid="uid://ci05fo0kehfc3" path="res://Player/buff_manager.tscn" id="5_o40i8"]
-[ext_resource type="Texture2D" uid="uid://csluqvkfyevgl" path="res://assets/buffs/metrocard.png" id="8_87ej5"]
-[ext_resource type="Texture2D" uid="uid://cuk2e57yoqfo2" path="res://assets/buffs/phone.png" id="9_4fe2n"]
-[ext_resource type="PackedScene" uid="uid://sqcimyr1jfkb" path="res://enemy/enemy_spawner.tscn" id="9_qrtql"]
-[ext_resource type="Texture2D" uid="uid://bgobw2yf3s3hq" path="res://assets/buffs/ketchup.png" id="10_u8dtc"]
-[ext_resource type="Texture2D" uid="uid://bnlhtpl8iomif" path="res://assets/taxi.png" id="11_83l1l"]
-[ext_resource type="Texture2D" uid="uid://ckel3t4vr1tgl" path="res://assets/shoe.png" id="12_3ynlc"]
-[ext_resource type="LabelSettings" uid="uid://cn6751vo1od8q" path="res://Player/text.tres" id="13_2ow7f"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtosa"]
-texture = ExtResource("2_0rq63")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lm32"]
+texture = ExtResource("1_4116f")
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
@@ -621,70 +608,86 @@ texture = ExtResource("2_0rq63")
 7:56/0 = 0
 9:56/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_tgt7e"]
-sources/0 = SubResource("TileSetAtlasSource_dtosa")
+[sub_resource type="TileSet" id="TileSet_k4rqt"]
+sources/0 = SubResource("TileSetAtlasSource_4lm32")
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_u0kte"]
-b = Vector2(-147, 0)
+[sub_resource type="LabelSettings" id="LabelSettings_qdu13"]
+font = ExtResource("1_1ttql")
+font_size = 80
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ee5v5"]
-b = Vector2(146, 0)
+[sub_resource type="Theme" id="Theme_infhv"]
+default_font = ExtResource("1_1ttql")
+default_font_size = 128
 
-[node name="World" type="Node2D"]
-script = ExtResource("1_eq16t")
-enemies = Array[PackedScene]([ExtResource("2_a52x8"), ExtResource("3_8406j"), ExtResource("4_de130")])
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsnc0"]
+size = Vector2(580, 350)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3i0v"]
+font = ExtResource("1_1ttql")
+font_size = 40
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -19.0
+offset_right = -25.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BG" type="TileMapLayer" parent="."]
-position = Vector2(72, 108)
+position = Vector2(634, 1711)
 scale = Vector2(10, 10)
 tile_map_data = PackedByteArray("AAD1/+//AAADACYAAAD1//D/AAADACYAAAD2//H/AAADACYAAAD2//L/AAADACYAAAD2//P/AAADACYAAAD2//T/AAADACYAAAD2//X/AAADACYAAAD2//b/AAADACYAAAD2//f/AAADACYAAAD2//j/AAADACYAAAD3//n/AAADACYAAAD3//r/AAADACYAAAD3//v/AAADACYAAAD3//z/AAADACYAAAD3//3/AAADACYAAAD3//7/AAADACYAAAD3////AAADACYAAAD3/wAAAAADACYAAAD3/wEAAAADACYAAAD3/wIAAAADACYAAAD3/wMAAAADACYAAAD3/wQAAAADACYAAAD3/wUAAAADACYAAAD3/wYAAAADACYAAAD/////AAAHACYAAAD//wAAAAAHACYAAAD//wEAAAAHACYAAAD8//j/AAAJACgAAAD8//n/AAAJACgAAAD8//r/AAAJACgAAAD8//v/AAAJACgAAAD8//z/AAAJACgAAAD8//3/AAAJACgAAAD8//7/AAAJACgAAAD8////AAAJACgAAAD8/wAAAAAJACgAAAD8/wEAAAAJACgAAAD8/wIAAAAJACgAAAD9//j/AAADACYAAAD9//n/AAADACYAAAD9//r/AAADACYAAAD9//v/AAADACYAAAD9//z/AAADACYAAAD9//3/AAADACYAAAD9//7/AAADACYAAAD9////AAADACYAAAD9/wAAAAADACYAAAD9/wEAAAADACYAAAD9/wIAAAADACYAAAD+//j/AAADACYAAAD+//n/AAADACYAAAD+//r/AAADACYAAAD+//v/AAADACYAAAD+//z/AAADACYAAAD+//3/AAADACYAAAD+//7/AAADACYAAAD+////AAADACYAAAD+/wAAAAADACYAAAD+/wEAAAADACYAAAD+/wIAAAADACYAAAD///j/AAAHACYAAAD///n/AAAHACYAAAD///r/AAAHACYAAAD///v/AAAHACYAAAD///z/AAAHACYAAAD///3/AAAHACYAAAD///7/AAAHACYAAAD//wIAAAADACYAAAAAAPj/AAADACYAAAAAAPn/AAADACYAAAAAAPr/AAADACYAAAAAAPv/AAADACYAAAAAAPz/AAADACYAAAAAAP3/AAADACYAAAAAAP7/AAADACYAAAAAAP//AAADACYAAAAAAAAAAAADACYAAAAAAAEAAAADACYAAAAAAAIAAAADACYAAAABAPj/AAADACYAAAABAPn/AAADACYAAAABAPr/AAADACYAAAABAPv/AAADACYAAAABAPz/AAADACYAAAABAP3/AAADACYAAAABAP7/AAADACYAAAABAP//AAADACYAAAABAAAAAAADACYAAAABAAEAAAADACYAAAABAAIAAAADACYAAAACAPj/AAAFACgAAAACAPn/AAAFACgAAAACAPr/AAAFACgAAAACAPv/AAAFACgAAAACAPz/AAAFACgAAAACAP3/AAAFACgAAAACAP7/AAAFACgAAAACAP//AAAFACgAAAACAAAAAAAFACgAAAACAAEAAAAFACgAAAACAAIAAAAFACgAAAADAPj/AAADACYAAAADAPn/AAADACYAAAADAPr/AAADACYAAAADAPv/AAADACYAAAADAPz/AAADACYAAAADAP3/AAADACYAAAADAP7/AAADACYAAAADAP//AAADACYAAAADAAAAAAADACYAAAADAAEAAAADACYAAAADAAIAAAADACYAAAD8//T/AAADACYAAAD8//X/AAAJACgAAAD8//b/AAAJACgAAAD8//f/AAAJACgAAAD9//T/AAADACYAAAD9//X/AAADACYAAAD9//b/AAADACYAAAD9//f/AAADACYAAAD+//T/AAADACYAAAD+//X/AAADACYAAAD+//b/AAADACYAAAD+//f/AAADACYAAAD///T/AAAHACYAAAD///X/AAAHACYAAAD///b/AAAHACYAAAD///f/AAAHACYAAAAAAPT/AAADACYAAAAAAPX/AAADACYAAAAAAPb/AAADACYAAAAAAPf/AAADACYAAAABAPT/AAADACYAAAABAPX/AAADACYAAAABAPb/AAADACYAAAABAPf/AAADACYAAAACAPT/AAADACYAAAACAPX/AAAFACgAAAACAPb/AAAFACgAAAACAPf/AAAFACgAAAADAPT/AAADACYAAAADAPX/AAADACYAAAADAPb/AAADACYAAAADAPf/AAADACYAAAA=")
-tile_set = SubResource("TileSet_tgt7e")
+tile_set = SubResource("TileSet_k4rqt")
 y_sort_origin = -2
 
-[node name="PlayerHorde" parent="." instance=ExtResource("1_angm3")]
-position = Vector2(1, 1)
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 205.0
+offset_right = 1081.0
+offset_bottom = 397.0
+text = "   CUNY's Battle"
+label_settings = SubResource("LabelSettings_qdu13")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 820.0
+offset_right = 846.0
+offset_bottom = 1134.0
+theme = SubResource("Theme_infhv")
+text = "Play"
+script = ExtResource("2_5rree")
+game = ExtResource("3_dfuys")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Button"]
+position = Vector2(293, 159)
+shape = SubResource("RectangleShape2D_hsnc0")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 1616.0
+offset_right = 1105.0
+offset_bottom = 1808.0
+text = "Last Score = 0
+High Score = 0"
+label_settings = SubResource("LabelSettings_i3i0v")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_02hfy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-6, -605)
+position = Vector2(552, 980)
 
-[node name="RightBorder" type="StaticBody2D" parent="."]
-position = Vector2(550, 107)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder"]
-shape = SubResource("SegmentShape2D_u0kte")
-
-[node name="LeftBorder" type="StaticBody2D" parent="."]
-position = Vector2(-550, 107)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder"]
-position = Vector2(384, -32)
-shape = SubResource("SegmentShape2D_ee5v5")
-
-[node name="BuffManager" parent="." instance=ExtResource("5_o40i8")]
-position = Vector2(-506, -1522)
-textures = Array[Texture2D]([ExtResource("8_87ej5"), ExtResource("9_4fe2n"), ExtResource("10_u8dtc"), ExtResource("11_83l1l"), ExtResource("12_3ynlc")])
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="CurrentLevel" type="Label" parent="CanvasLayer2"]
-offset_left = -11.0
-offset_top = 1831.0
-offset_right = 1080.0
-offset_bottom = 1919.0
-size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "current level 1"
-label_settings = ExtResource("13_2ow7f")
-horizontal_alignment = 1
-script = ExtResource("2_jvmmh")
-
-[node name="EnemySpawner" parent="." instance=ExtResource("9_qrtql")]
-
-[node name="EnemySpawnTimer" type="Timer" parent="."]
-wait_time = 0.578
-autostart = true
-
-[node name="enemy3" parent="." instance=ExtResource("4_de130")]
-position = Vector2(3, -990)
-
-[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
+[connection signal="pressed" from="Button" to="Button" method="pressed"]
+[connection signal="pressed" from="Button/TouchScreenButton" to="Button" method="pressed"]

@@ -24,7 +24,7 @@ func spawnBuff() -> void:
 	# var num = 1
 	var newbarrel: BuffBarrel = barrel.instantiate()
 	newbarrel.tree_exited.connect(buff.bind(num))
-	newbarrel.global_position = global_position
+	newbarrel.global_position = Vector2(randf_range(-500,500), global_position.y)
 	newbarrel.setTexture(textures[num % textures.size()])
 	get_parent().add_child(newbarrel)
 

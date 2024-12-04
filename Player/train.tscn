@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cg57xlixeu37d"]
 
-[ext_resource type="Texture2D" uid="uid://dq64r162jui7p" path="res://icon.svg" id="1_bh3gg"]
 [ext_resource type="Script" path="res://Player/player_projectile.gd" id="1_yht6x"]
+[ext_resource type="Texture2D" uid="uid://dvbu82qq20h3" path="res://assets/buffs/ghost_train.png" id="2_dkpet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x04sb"]
 size = Vector2(119, 400)
@@ -15,6 +15,7 @@ position = Vector2(49.5, 190)
 shape = SubResource("RectangleShape2D_x04sb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(46, 195)
-scale = Vector2(0.96875, 3.1875)
-texture = ExtResource("1_bh3gg")
+position = Vector2(78, 182)
+rotation = 1.5708
+scale = Vector2(6, 6)
+texture = ExtResource("2_dkpet")

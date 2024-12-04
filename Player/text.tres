@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cn6751vo1od8q"]
+
+[ext_resource type="FontFile" uid="uid://bdgqsmmdqak4y" path="res://assets/Daydream.ttf" id="1_46sjr"]
+
+[resource]
+font = ExtResource("1_46sjr")
+font_size = 32
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 1)
