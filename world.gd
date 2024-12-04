@@ -5,6 +5,7 @@ extends Node2D
 
 @onready var Buffs: BuffManager = $BuffManager
 
+var enemiesKilled: int = 0
 
 var counter = 0
 @export var decrement = 0.2
@@ -25,9 +26,14 @@ func signalDeath():
 	Buffs.toNextBuff += 1
 	
 func _on_enemy_spawn_timer_timeout() -> void:
-	var e = enemies.pick_random().instantiate()
-	e.global_position = Vector2(randf_range(-900,900),-1700)
+	var e: Enemy = enemies.pick_random().instantiate()
+	
+	e.global_position = Vector2(randf_range(-500,500),-1700)
 	e.tree_exited.connect(signalDeath)
+
+	e.damage += floor((enemiesKilled / 10))
+	e.health += floor((enemiesKilled/10))
+
 	EnemySpawner.add_child(e)
 	counter += 1
 	if counter > 10:

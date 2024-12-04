@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="MHC 1 Final"
-run/main_scene="res://world.tscn"
+run/main_scene="res://Player/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ScoreManager="*res://ScoreManager.gd"
 
 [display]
 

@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5lcjur3tk0fd"]
+[gd_scene load_steps=4 format=3 uid="uid://b0a3wp125r7m"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_yk0ux"]
-[ext_resource type="Texture2D" uid="uid://dq64r162jui7p" path="res://icon.svg" id="2_gj1au"]
+[ext_resource type="Texture2D" uid="uid://xlpunelwhaha" path="res://assets/Alien - 1.png" id="2_bqjv1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uur23"]
 size = Vector2(137, 130.5)
@@ -12,7 +12,9 @@ collision_mask = 5
 script = ExtResource("1_yk0ux")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gj1au")
+position = Vector2(-5, -3.5)
+scale = Vector2(0.974227, 0.981959)
+texture = ExtResource("2_bqjv1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 1.75)

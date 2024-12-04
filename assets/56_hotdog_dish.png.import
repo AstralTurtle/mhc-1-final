@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dceekx4hvkvee"
-path="res://.godot/imported/55_hotdog_sauce.png-82fc603076596cf3de58e54b76fa3a3e.ctex"
+uid="uid://dj5fnflv8kdnw"
+path="res://.godot/imported/56_hotdog_dish.png-01cfa2915748429eabab90991824efc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://55_hotdog_sauce.png"
-dest_files=["res://.godot/imported/55_hotdog_sauce.png-82fc603076596cf3de58e54b76fa3a3e.ctex"]
+source_file="res://assets/56_hotdog_dish.png"
+dest_files=["res://.godot/imported/56_hotdog_dish.png-01cfa2915748429eabab90991824efc1.ctex"]
 
 [params]
 

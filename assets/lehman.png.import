@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj5fnflv8kdnw"
-path="res://.godot/imported/56_hotdog_dish.png-99ceb6b33f79e694dc36c199d6bbe4af.ctex"
+uid="uid://cob47aoq7xrns"
+path="res://.godot/imported/lehman.png-883d37983131f33c7d17c125eceaccaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://56_hotdog_dish.png"
-dest_files=["res://.godot/imported/56_hotdog_dish.png-99ceb6b33f79e694dc36c199d6bbe4af.ctex"]
+source_file="res://assets/lehman.png"
+dest_files=["res://.godot/imported/lehman.png-883d37983131f33c7d17c125eceaccaa.ctex"]
 
 [params]
 
