@@ -1,15 +1,12 @@
-[gd_scene load_steps=19 format=4 uid="uid://dwkncs3fqhpgy"]
+[gd_scene load_steps=20 format=4 uid="uid://dwkncs3fqhpgy"]
 
 [ext_resource type="PackedScene" uid="uid://bwqxue42mfl4u" path="res://Player/player_horde.tscn" id="1_angm3"]
 [ext_resource type="Script" path="res://world.gd" id="1_eq16t"]
 [ext_resource type="Texture2D" uid="uid://bpuge3pjtj5cj" path="res://assets/CP_V1.0.4.png" id="2_0rq63"]
-
-[ext_resource type="PackedScene" uid="uid://b5lcjur3tk0fd" path="res://enemy/enemy.tscn" id="2_a52x8"]
+[ext_resource type="PackedScene" uid="uid://b0a3wp125r7m" path="res://enemy/enemy.tscn" id="2_a52x8"]
 [ext_resource type="Script" path="res://Player/CurrentLevel.gd" id="2_jvmmh"]
-[ext_resource type="PackedScene" uid="uid://xi3wld85to6h" path="res://enemy/enemy_2.tscn" id="3_8406j"]
+[ext_resource type="PackedScene" uid="uid://ceekgqhlncrw3" path="res://enemy/enemy_2.tscn" id="3_8406j"]
 [ext_resource type="PackedScene" uid="uid://davb1ws1qaocf" path="res://enemy/enemy_3.tscn" id="4_de130"]
-[ext_resource type="PackedScene" uid="uid://brrv2sfgf63mj" path="res://Player/player_projectile.tscn" id="4_nj02d"]
-
 [ext_resource type="PackedScene" uid="uid://ci05fo0kehfc3" path="res://Player/buff_manager.tscn" id="5_o40i8"]
 [ext_resource type="Texture2D" uid="uid://csluqvkfyevgl" path="res://assets/buffs/metrocard.png" id="8_87ej5"]
 [ext_resource type="Texture2D" uid="uid://cuk2e57yoqfo2" path="res://assets/buffs/phone.png" id="9_4fe2n"]
