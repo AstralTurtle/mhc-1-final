@@ -7,11 +7,11 @@ class_name  PlayerProjectile
 @export var damage: float = 25
 
 func _ready() -> void:
-    add_to_group('player_projectile')
+	add_to_group('player_projectile')
 
 func _physics_process(delta: float) -> void:
-    # print(damage)
-    position.y -= speed * delta;
-    if damage <= 0 || position.y < -1750 :
-        queue_free()
-        
+	# print(damage)
+	position.y -= speed * delta;
+	if damage <= 0 || position.y < -1750 :
+		queue_free()
+		
