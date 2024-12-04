@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://xi3wld85to6h"]
 
 [ext_resource type="PackedScene" uid="uid://b5lcjur3tk0fd" path="res://enemy/enemy.tscn" id="1_c3fhi"]
-[ext_resource type="Texture2D" uid="uid://cuk2e57yoqfo2" path="res://assets/buffs/phone.png" id="2_5c5q6"]
+[ext_resource type="Texture2D" uid="uid://byervp6ntls2" path="res://assets/Enemies/Alien - 2.png" id="2_o28bd"]
 
 [node name="enemy2" instance=ExtResource("1_c3fhi")]
 speed = 250
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(11, 3)
-scale = Vector2(1.16, 1.16)
-texture = ExtResource("2_5c5q6")
+position = Vector2(-5, -6)
+scale = Vector2(0.957442, 0.957442)
+texture = ExtResource("2_o28bd")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(2, -0.5)
+position = Vector2(1, 2.25)
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
 position = Vector2(1, -90)

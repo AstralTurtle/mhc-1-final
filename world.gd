@@ -26,7 +26,7 @@ func signalDeath():
 	
 func _on_enemy_spawn_timer_timeout() -> void:
 	var e = enemies.pick_random().instantiate()
-	e.global_position = Vector2(randf_range(-900,900),-1700)
+	e.global_position = Vector2(randf_range(-440,440),-1700)
 	e.tree_exited.connect(signalDeath)
 	EnemySpawner.add_child(e)
 	counter += 1
