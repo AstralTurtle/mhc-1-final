@@ -20,11 +20,16 @@ func _physics_process(delta: float) -> void:
 	if (attackTimer >= attackThreshold):
 		shoot()
 		attackTimer = 0
+	$ProgressBar.value = health
+	$ProgressBar.max_value = center.health
+	print("healh: " +str(health) )
 
 func take_damage(damage: float):
 	health -= damage
 	if health < 0:
+		center.member_died()
 		queue_free()
+		
 
 func _ready() -> void:
 	$Sprite2D.texture = sprites[randi_range(0,sprites.size()-1)]

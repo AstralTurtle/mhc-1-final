@@ -1,9 +1,10 @@
 extends Node2D
 class_name PlayerHordeController
 
+signal gameEnd
 
-var hoard_count: int = 0
-var hoard_level: int = 1
+@export var hoard_count: int = 0
+@export var hoard_level: int = 1
 const player_hoard_group: String = "_PlayerHoardGroup"
 
 @onready var target_location: float = position.x
@@ -32,7 +33,9 @@ var time_accumulated = 0
 func _physics_process(delta: float) -> void:
 	global_position.x = move_toward(global_position.x, target_location, speed)
 	global_position.x = clampf(global_position.x, -600, 600) # slightly larger then the border, but prevents the horde from taking to long to respond
-
+	if hoard_count <= 0:
+		print('we out')
+		gameEnd.emit()
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenDrag:
 		target_location = (view_to_world * event.position).x
@@ -64,6 +67,9 @@ func merge():
 		hoard_count = 0
 		get_tree().call_group(player_hoard_group, 'queue_free')
 		spawn()
+
+func member_died():
+	hoard_count -= 1
 
 func fire_train():
 	var new_train: PlayerProjectile = train.instantiate()
