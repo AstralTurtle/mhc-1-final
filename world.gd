@@ -26,9 +26,10 @@ func signalDeath():
 	Buffs.toNextBuff += 1
 	
 func _on_enemy_spawn_timer_timeout() -> void:
-	var e: Enemy = enemies.pick_random().instantiate()
-	
-	e.global_position = Vector2(randf_range(-500,500),-1700)
+
+	var e = enemies.pick_random().instantiate()
+	e.global_position = Vector2(randf_range(-440,440),-1700)
+
 	e.tree_exited.connect(signalDeath)
 
 	e.damage += floor((enemiesKilled / 10))
