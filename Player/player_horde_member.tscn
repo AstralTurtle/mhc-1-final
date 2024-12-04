@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq4rrn8htaped"]
+[gd_scene load_steps=12 format=3 uid="uid://bq4rrn8htaped"]
 
 [ext_resource type="Script" path="res://Player/player_horde_member.gd" id="1_euigm"]
 [ext_resource type="Texture2D" uid="uid://kb8oyns0kpma" path="res://assets/mascots/brooklyn.png" id="2_vt3ae"]
@@ -12,6 +12,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b7qy"]
 size = Vector2(54, 52)
+
+[sub_resource type="Theme" id="Theme_kp006"]
 
 [node name="PlayerHordeMember" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
@@ -27,3 +29,11 @@ shape = SubResource("RectangleShape2D_8b7qy")
 position = Vector2(-2, -1)
 scale = Vector2(0.445313, 0.4375)
 texture = ExtResource("3_f2kqq")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -30.6667
+offset_top = 26.0
+offset_right = 26.3333
+offset_bottom = 31.0
+theme = SubResource("Theme_kp006")
+show_percentage = false
