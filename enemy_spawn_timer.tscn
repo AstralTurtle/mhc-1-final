@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://vxwkn2aiaqd1"]
+
+[node name="EnemySpawnTimer" type="Timer"]
+wait_time = 5.0
+autostart = true

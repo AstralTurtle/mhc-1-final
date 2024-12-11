@@ -13,4 +13,9 @@ func _physics_process(delta: float) -> void:
 	# print(damage)
 	position.y += speed * delta;
 
+func _on_body_entered(body):
+	if body is PlayerHordeMember:
+		(body as PlayerHordeMember).take_damage(damage)
+		queue_free()
+
 		

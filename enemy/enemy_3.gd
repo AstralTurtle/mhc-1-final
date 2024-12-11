@@ -2,7 +2,7 @@ extends Enemy
 
 @export var bullet_scene: PackedScene  # EnemyProjectile scene to be set in the inspector
 @export var bullet_speed: float = 200  # Speed of the bullet
-@export var shoot_interval: float = 2  # Interval between shots in seconds
+@export var shoot_interval: float = 3  # Interval between shots in seconds
 
 var shoot_timer: float = 0.0  # Timer to track elapsed time
 
@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 	if shoot_timer >= shoot_interval:
 		shoot_bullet()
 		shoot_timer = 0.0  # Reset the timer
+		shoot_interval = randf_range(2,5)
 
 # Function to spawn and shoot a bullet downward
 func shoot_bullet() -> void:

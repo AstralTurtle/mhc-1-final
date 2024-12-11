@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dwkncs3fqhpgy"]
+[gd_scene load_steps=21 format=4 uid="uid://dwkncs3fqhpgy"]
 
 [ext_resource type="PackedScene" uid="uid://bwqxue42mfl4u" path="res://Player/player_horde.tscn" id="1_angm3"]
 [ext_resource type="Script" path="res://world.gd" id="1_eq16t"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0a3wp125r7m" path="res://enemy/enemy.tscn" id="2_a52x8"]
 [ext_resource type="Script" path="res://Player/CurrentLevel.gd" id="2_jvmmh"]
 [ext_resource type="PackedScene" uid="uid://ceekgqhlncrw3" path="res://enemy/enemy_2.tscn" id="3_8406j"]
-[ext_resource type="PackedScene" uid="uid://davb1ws1qaocf" path="res://enemy/enemy_3.tscn" id="4_de130"]
+[ext_resource type="PackedScene" uid="uid://davb1ws1qaocf" path="res://enemy/enemy_3.tscn" id="4_2avv7"]
 [ext_resource type="PackedScene" uid="uid://ci05fo0kehfc3" path="res://Player/buff_manager.tscn" id="5_o40i8"]
 [ext_resource type="Texture2D" uid="uid://csluqvkfyevgl" path="res://assets/buffs/metrocard.png" id="8_87ej5"]
 [ext_resource type="Texture2D" uid="uid://cuk2e57yoqfo2" path="res://assets/buffs/phone.png" id="9_4fe2n"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bnlhtpl8iomif" path="res://assets/taxi.png" id="11_83l1l"]
 [ext_resource type="Texture2D" uid="uid://ckel3t4vr1tgl" path="res://assets/shoe.png" id="12_3ynlc"]
 [ext_resource type="LabelSettings" uid="uid://cn6751vo1od8q" path="res://Player/text.tres" id="13_2ow7f"]
+[ext_resource type="PackedScene" uid="uid://vxwkn2aiaqd1" path="res://enemy_spawn_timer.tscn" id="16_r0o12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtosa"]
 texture = ExtResource("2_0rq63")
@@ -629,7 +630,10 @@ b = Vector2(146, 0)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_eq16t")
-enemies = Array[PackedScene]([ExtResource("2_a52x8"), ExtResource("3_8406j")])
+enemies = Array[PackedScene]([ExtResource("2_a52x8"), ExtResource("3_8406j"), ExtResource("4_2avv7")])
+timerScene = ExtResource("16_r0o12")
+decrementPercent = null
+difficultyMod = null
 
 [node name="BG" type="TileMapLayer" parent="."]
 position = Vector2(72, 108)
@@ -677,8 +681,7 @@ script = ExtResource("2_jvmmh")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("9_qrtql")]
 
-[node name="EnemySpawnTimer" type="Timer" parent="."]
+[node name="EnemySpawnTimer" parent="." instance=ExtResource("16_r0o12")]
 wait_time = 3.0
-autostart = true
 
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

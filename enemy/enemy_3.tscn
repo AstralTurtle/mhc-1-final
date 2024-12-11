@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://davb1ws1qaocf"]
 
-[ext_resource type="PackedScene" uid="uid://b5lcjur3tk0fd" path="res://enemy/enemy.tscn" id="1_78gfa"]
+[ext_resource type="PackedScene" uid="uid://b0a3wp125r7m" path="res://enemy/enemy.tscn" id="1_78gfa"]
 [ext_resource type="Texture2D" uid="uid://ditex81ukcu7w" path="res://assets/Enemies/Alien - 1.png" id="2_hyxk2"]
 [ext_resource type="Script" path="res://enemy/enemy_3.gd" id="2_v2ara"]
 [ext_resource type="PackedScene" uid="uid://buxi2ye32rtyo" path="res://enemy/enemy_projectile.tscn" id="3_hiq05"]
@@ -9,7 +9,7 @@
 script = ExtResource("2_v2ara")
 bullet_scene = ExtResource("3_hiq05")
 bullet_speed = 200.0
-shoot_interval = 2.0
+shoot_interval = 3.0
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-7.00001, 0)

@@ -16,13 +16,16 @@ func _physics_process(delta: float) -> void:
 	if center:
 		velocity = (center.position - position).normalized() * speed
 	move_and_slide()
-	attackTimer += delta * randf_range(0.5, 1.5)
+	attackTimer += delta * randf_range(0.75, 1.25)
 	if (attackTimer >= attackThreshold):
 		shoot()
 		attackTimer = 0
+
+func _process(delta: float) -> void:
 	$ProgressBar.value = health
-	$ProgressBar.max_value = center.health
-	print("healh: " +str(health) )
+	$ProgressBar.max_value = center.health * center.hoard_level * 10
+	# print("healh: " +str(health) )
+	print("dmg" + str(damage))
 
 func take_damage(damage: float):
 	health -= damage

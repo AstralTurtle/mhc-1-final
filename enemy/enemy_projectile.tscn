@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://buxi2ye32rtyo"]
 
 [ext_resource type="Script" path="res://enemy/enemy_projectile.gd" id="1_ccxp4"]
-[ext_resource type="Texture2D" uid="uid://dckuyg8ndhw6j" path="res://bullet.png" id="1_ptxrd"]
+[ext_resource type="Texture2D" uid="uid://dckuyg8ndhw6j" path="res://assets/bullet.png" id="1_ptxrd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_482d8"]
 radius = 16.0
@@ -9,6 +9,7 @@ height = 118.0
 
 [node name="EnemyProjectile" type="Area2D"]
 script = ExtResource("1_ccxp4")
+damage = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
@@ -19,3 +20,5 @@ position = Vector2(-2.05612, 10)
 rotation = -1.5708
 scale = Vector2(0.135543, 0.145847)
 texture = ExtResource("1_ptxrd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

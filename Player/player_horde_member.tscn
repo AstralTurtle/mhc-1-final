@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bq4rrn8htaped"]
+[gd_scene load_steps=15 format=3 uid="uid://bq4rrn8htaped"]
 
 [ext_resource type="Script" path="res://Player/player_horde_member.gd" id="1_euigm"]
 [ext_resource type="Texture2D" uid="uid://kb8oyns0kpma" path="res://assets/mascots/brooklyn.png" id="2_vt3ae"]
@@ -9,11 +9,22 @@
 [ext_resource type="Texture2D" uid="uid://bevkvdrryy1w4" path="res://assets/mascots/baruch.png" id="7_j6mdh"]
 [ext_resource type="Texture2D" uid="uid://dbj27suhxs1wr" path="res://assets/mascots/csi.png" id="8_x84xx"]
 [ext_resource type="Texture2D" uid="uid://dwraefr0rbskj" path="res://assets/mascots/queens.png" id="9_6nb4h"]
+[ext_resource type="FontFile" uid="uid://bdgqsmmdqak4y" path="res://assets/Daydream.ttf" id="10_5dgnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b7qy"]
 size = Vector2(54, 52)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljqnd"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s400o"]
+bg_color = Color(0, 1, 0, 1)
+
 [sub_resource type="Theme" id="Theme_kp006"]
+default_font = ExtResource("10_5dgnl")
+default_font_size = 12
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ljqnd")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_s400o")
 
 [node name="PlayerHordeMember" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
@@ -36,4 +47,3 @@ offset_top = 26.0
 offset_right = 26.3333
 offset_bottom = 31.0
 theme = SubResource("Theme_kp006")
-show_percentage = false

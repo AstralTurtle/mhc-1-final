@@ -3,6 +3,7 @@ class_name BuffManager
 @export var textures: Array[Texture2D] = []
 @export var barrel: PackedScene
 
+var buffNum = 0
 
 @export var buffThreshold = 3
 var toNextBuff = 0;
@@ -20,11 +21,14 @@ func _physics_process(delta: float) -> void:
 
 
 func spawnBuff() -> void:
+	buffNum += 1
+
 	var num := randi_range(0,4)
 	# var num = 1
 	var newbarrel: BuffBarrel = barrel.instantiate()
 	newbarrel.tree_exited.connect(buff.bind(num))
 	newbarrel.global_position = Vector2(randf_range(-500,500), global_position.y)
+	newbarrel.health = buffHealth * buffNum
 	newbarrel.setTexture(textures[num % textures.size()])
 	get_parent().add_child(newbarrel)
 
@@ -39,11 +43,11 @@ func buff(num: int) -> void:
 		1:
 			controller.spawn()
 		2:
-			controller.damage += 2
+			controller.damage += 5
 		3:
-			controller.attackMinimum -= 0.2
+			controller.attackMinimum -= 0.25
 		4:
-			controller.member_speed += 20
+			controller.member_speed += 30
 		_:
 			pass
 

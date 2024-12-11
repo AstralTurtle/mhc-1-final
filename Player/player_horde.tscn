@@ -11,6 +11,7 @@
 script = ExtResource("1_drcei")
 speed = 500.0
 horde_member = ExtResource("3_u0fh8")
+attackMinimum = 2.75
 member_speed = 250.0
 projectile = ExtResource("3_81tjk")
 train = ExtResource("4_dsglf")
